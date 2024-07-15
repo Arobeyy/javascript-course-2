@@ -3,8 +3,7 @@ console.log(array);
 
 function getLastValue(array) {
   const lastIndex = array.length - 1;
-  const lastValue = array[lastIndex];
-  console.log(lastValue);
+  return array[lastIndex];
 }
 
-getLastValue(array);
+console.log(getLastValue(array));
