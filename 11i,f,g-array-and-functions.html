@@ -14,8 +14,31 @@
         }
         return array;
       }
-
       console.log(addNum(arr1, 2));
+
+      const arr2 = [1, 1, 2];
+      console.log('two arrays...');
+      console.log(arr1);
+      console.log(arr2);
+      // function that take two arrays as parameter
+      // adds them and return the resulted array
+      function addArrays(array1 , array2) { 
+        const resultedArray = [];
+        let length = 0;
+
+        if (array1.length > array2.length)
+          length = array1.length;
+        else
+          length = array2.length;
+
+        for (let i = 0; i < length; i++) {
+          resultedArray[i] = array1[i] + array2[i];
+        }
+
+        return resultedArray;
+      }
+      console.log('resulted array...');
+      console.log(addArrays(arr1, arr2));
 
     </script>
   </body>
