@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>array and functions</title>
+  </head>
+  <body>
+    <script>
+      const arr1 = [1, 2, 3];
+
+      function addNum(array, num) {
+
+        for(let i = 0; i < array.length; i++) {
+          array[i] += num;
+        }
+        return array;
+      }
+
+      console.log(addNum(arr1, 2));
+
+    </script>
+  </body>
+</html>
