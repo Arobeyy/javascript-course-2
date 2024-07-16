@@ -40,6 +40,19 @@
       console.log('resulted array...');
       console.log(addArrays(arr1, arr2));
 
+      const arr3 = [-2, 3, -5, 7, 4, -9];
+
+      // a function that counts the positive elements of an array
+      function countPositive(array) {
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+          if(array[i] < 0)
+            count++;
+        }
+        return count;
+      }
+      console.log(`count of positive number = ${countPositive(arr3)}`);
+
     </script>
   </body>
 </html>
