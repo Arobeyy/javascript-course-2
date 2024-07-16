@@ -16,6 +16,25 @@
         console.log(i);
         i += 2;
       }
+
+      //a loop that takes an array of number and create new array incresed by 1
+      const arr = [1, 2, 3];
+      const arr2 = [];
+
+      for (let i = 0; i < arr.length; i++) {
+        arr2[i] = arr[i] + 1;
+      }
+
+      console.log(arr2);
+
+      function addOne(array) {
+        for (let i = 0; i < array.length; i++) {
+          array[i] += 1;
+        }
+        return array;
+      }
+      console.log(addOne(arr2));
+
     </script>
   </body>
 </html>
