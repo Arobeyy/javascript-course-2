@@ -5,11 +5,8 @@
   </head>
   <body>
     <script>
-      const arr1 = [1, 2, 3];
-
       function addNum(array, num) {
-
-        for(let i = 0; i < array.length; i++) {
+        for (let i = 0; i < array.length; i++) {
           array[i] += num;
         }
         return array;
@@ -17,19 +14,17 @@
       console.log(addNum(arr1, 2));
 
       const arr2 = [1, 1, 2];
-      console.log('two arrays...');
+      console.log("two arrays...");
       console.log(arr1);
       console.log(arr2);
       // function that take two arrays as parameter
       // adds them and return the resulted array
-      function addArrays(array1 , array2) { 
+      function addArrays(array1, array2) {
         const resultedArray = [];
         let length = 0;
 
-        if (array1.length > array2.length)
-          length = array1.length;
-        else
-          length = array2.length;
+        if (array1.length > array2.length) length = array1.length;
+        else length = array2.length;
 
         for (let i = 0; i < length; i++) {
           resultedArray[i] = array1[i] + array2[i];
@@ -37,7 +32,7 @@
 
         return resultedArray;
       }
-      console.log('resulted array...');
+      console.log("resulted array...");
       console.log(addArrays(arr1, arr2));
 
       const arr3 = [-2, 3, -5, 7, 4, -9];
@@ -46,13 +41,12 @@
       function countPositive(array) {
         let count = 0;
         for (let i = 0; i < array.length; i++) {
-          if(array[i] < 0)
-            count++;
+          if (array[i] < 0) count++;
         }
         return count;
       }
+      const arr1 = [1, 2, 3];
       console.log(`count of positive number = ${countPositive(arr3)}`);
-
     </script>
   </body>
 </html>

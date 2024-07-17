@@ -5,9 +5,6 @@
   </head>
   <body>
     <script>
-      const nums = [2, 5, 18, 7, 99, 23, 45];
-      const nums2 = [5];
-
       function findMinMax(array) {
         const minMax = {
           min: Infinity,
@@ -31,9 +28,12 @@
 
         return minMax;
       }
+
+      const nums = [2, 5, 18, 7, 99, 23, 45];
+      const nums2 = [5];
+
       const result = findMinMax(nums);
       console.log(result);
-
       console.log(findMinMax(nums2));
       console.log(findMinMax([]));
     </script>
