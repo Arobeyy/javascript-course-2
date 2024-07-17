@@ -11,7 +11,7 @@
       function findMinMax(array) {
         const minMax = {
           min: Infinity,
-          max: -Infinity
+          max: -Infinity,
         };
 
         if (array.length === 0) {
@@ -21,10 +21,10 @@
         }
 
         for (let i = 0; i < array.length; i++) {
-          if(minMax.max < array[i]) {
+          if (minMax.max < array[i]) {
             minMax.max = array[i];
           }
-          if(array[i] < minMax.min) {
+          if (array[i] < minMax.min) {
             minMax.min = array[i];
           }
         }
