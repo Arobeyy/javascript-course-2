@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>minimum and maximum</title>
+  </head>
+  <body>
+    <script>
+      const nums = [2, 5, 18, 7, 99, 23, 45];
+      const nums2 = [5];
+
+      function findMinMax(array) {
+        const minMax = {
+          min: Infinity,
+          max: -Infinity
+        };
+
+        if (array.length === 0) {
+          minMax.max = null;
+          minMax.min = null;
+          return minMax;
+        }
+
+        for (let i = 0; i < array.length; i++) {
+          if(minMax.max < array[i]) {
+            minMax.max = array[i];
+          }
+          if(array[i] < minMax.min) {
+            minMax.min = array[i];
+          }
+        }
+
+        return minMax;
+      }
+      const result = findMinMax(nums);
+      console.log(result);
+
+      console.log(findMinMax(nums2));
+      console.log(findMinMax([]));
+    </script>
+  </body>
+</html>
