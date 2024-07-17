@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>count word function</title>
+  </head>
+  <body>
+    <script>
+      function countWords(words) {
+        const result = {};
+
+        for (let i = 0; i < words.length; i++) {
+          const word = words[i];
+
+          //result[word] adds/accesses a property using 
+          //whatever is saved inside the 'word' variavle.
+          //when result[word] = 0 , result[word] = 1 adds the word property 
+          //and accesse it and save = 1. 
+          if (!result[word]) {
+            result[word] = 1;
+          } else {
+            result[word]++;
+          }
+        }
+
+        return result;
+      }
+
+      const array = ["apple", "grape", "apple", "apple"];
+      console.log(countWords(array));
+    </script>
+  </body>
+</html>
