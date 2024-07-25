@@ -10,6 +10,9 @@ function renderTodoList() {
     const html = `
       <p>
         ${todoObject.name} (Due: ${todoObject.dueDate})
+        <button id = "doneButton" onclick = "
+          addClassToButton();
+        ">Done</button>
         <button onclick = "
           todoList.splice(${i}, 1);
           renderTodoList();  
@@ -19,6 +22,11 @@ function renderTodoList() {
     todoListHtml += html;
   }
   document.querySelector('.js-todo-list').innerHTML = todoListHtml;
+}
+
+function addClassToButton() {
+  const button = document.getElementById('doneButton');
+  button.classList.add('clicked');
 }
 
 function addTodo() {
