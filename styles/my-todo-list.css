@@ -112,4 +112,9 @@ body {
   cursor: pointer;
 }
 
+.done-clicked {
+  text-decoration: line-through;
+  color: gray;
+}
+
 
