@@ -12,11 +12,14 @@ function renderTodoList() {
         <div>due: ${todoObject.dueDate} </div>
         <button id = "doneButton" onclick = "
           addClassToButton();
-        " class = "done-todo-button">Done</button>
+          "class = "done-todo-button"><img src="icons/check-green.png">
+        </button>
         <button onclick = "
           todoList.splice(${i}, 1);
           renderTodoList();  
-        " class = "delete-todo-button">Delete</button>
+        " class = "delete-todo-button">
+          <img src="icons/delete-brown.png">
+        </button>
     `;
     todoListHtml += html;
   }
