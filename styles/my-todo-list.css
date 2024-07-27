@@ -59,6 +59,7 @@ body {
   column-gap: 10px;
   row-gap: 10px;
   align-items: center;
+  max-width: 780px;
   margin-right: 20px;
 }
 
