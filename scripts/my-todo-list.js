@@ -9,7 +9,7 @@ function renderTodoList() {
     const todoObject = todoList[i];
     const html = `
         <div>&bull; ${todoObject.name} </div>
-        <div>(Due: ${todoObject.dueDate}) </div>
+        <div>due: ${todoObject.dueDate} </div>
         <button id = "doneButton" onclick = "
           addClassToButton();
         " class = "done-todo-button">Done</button>
