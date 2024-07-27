@@ -5,10 +5,12 @@ body {
 }
 
 .cover-photo-container {
-  display: grid;
-  grid-template-columns: 1fr;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 150px;
-  width: 100%;
   box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -93,6 +95,7 @@ body {
 .todo-container {
   display: grid;
   margin-left: 225px;
+  margin-top: 150px;
 }
 
 .todo-input-grid{
