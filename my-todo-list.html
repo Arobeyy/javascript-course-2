@@ -2,36 +2,78 @@
 <html>
   <head>
     <title>my todo List</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="styles/my-todo-list.css">
+    <link rel="stylesheet" href="styles/my-todo-list.css" />
   </head>
   <body>
     <div class="cover-photo-container">
-      <img class="cover-photo" src="photos/_ (5).jpeg">
+      <img class="cover-photo" src="photos/_ (5).jpeg" />
     </div>
- 
-    <div class="side-profile-bar"></div>
+
+    <div class="side-profile-bar">
+      <div class="search-bar">
+        <input class="search-input" placeholder="Search" />
+        <button class="search-button">
+          <img
+            class="search-img"
+            src="icons/search_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"
+          />
+        </button>
+      </div>
+      <div class="sidebar">
+        <div class="sidebar-icon">
+          <img
+            class="home-icon"
+            src="icons/home_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"
+          />
+        </div>
+        <div class="sidebar-icon-text">Home</div>
+
+        <div class="sidebar-icon">
+          <img
+            class="home-icon"
+            src="icons/add_circle_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"
+          />
+        </div>
+        <div class="sidebar-icon-text">Create</div>
+
+        <div class="sidebar-icon">
+          <img
+            class="home-icon"
+            src="icons/edit_note_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"
+          />
+        </div>
+        <div class="sidebar-icon-text">Notes</div>
+      </div>
+    </div>
 
     <div class="todo-container">
       <div class="todo-input-grid">
-        <input class="js-name-input name-input" placeholder="Enter your todos" onkeydown="
-        handleOnkeydown(event);">
-        <input class="js-due-date-input due-date-input" type="date">
-        <button class="add-todo-button" onclick="
+        <input
+          class="js-name-input name-input"
+          placeholder="Enter your todos"
+          onkeydown="
+        handleOnkeydown(event);"
+        />
+        <input class="js-due-date-input due-date-input" type="date" />
+        <button
+          class="add-todo-button"
+          onclick="
           addTodo();
-        "><img class="add-icon" src="icons/add-light-brown.png"></button>
+        "
+        >
+          <img class="add-icon" src="icons/add-light-brown.png" />
+        </button>
       </div>
 
-      
-
       <div class="js-todo-list todo-grid"></div>
-
     </div>
-    
-
 
     <script src="scripts/my-todo-list.js"></script>
   </body>

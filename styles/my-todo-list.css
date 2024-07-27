@@ -21,27 +21,82 @@ body {
 
 .main-body {
   display: grid;
-  grid-template-columns: 180px 1fr;
+  grid-template-columns: 170px 1fr;
 }
 
 .side-profile-bar {
-  width: 180px;
+  width: 170px;
   position: fixed;
   z-index: 200;
   top: 150px;
   left: 0;
   bottom: 0;
-  background-color: rgba(156, 128, 79, 0.432);
+  background-color: rgba(165, 135, 82, 0.404);
   box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2);
+  align-items: center;
+}
+
+.search-bar {
+  display: grid;
+  grid-template-columns: 1fr 35px;
+  align-items: center;
+  column-gap: 7px;
+  margin-top: 15px;
+  margin-left: 9px;
+}
+
+.search-input {
+  width: 97%;
+  padding: 5px;
+  padding-left: 7px;
+  border: none;
+  border-radius: 10px;
+}
+
+.search-button {
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  border: none;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+.search-img {
+  width: 100%;
+}
+
+.sidebar {
+  display: grid;
+  grid-template-columns: 35px 1fr;
+  gap: 7px;
+  margin: 10px;
+}
+
+.sidebar-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+}
+.icon {
+  width: 95%;
+  height: auto;
+}
+
+.sidebar-icon-text {
+  display: grid;
+  align-items: center;
+  color: white;
+  font-weight: bold;
 }
 
 .todo-container {
   display: grid;
-  margin-left: 230px;
+  margin-left: 225px;
 }
 
 .todo-input-grid{
-  margin-top: 40px;
+  margin-top: 45px;
   display: grid;
   grid-template-columns: 300px 32px 45px;
   column-gap: 10px;
