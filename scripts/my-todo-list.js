@@ -1,16 +1,27 @@
-const todoList = [];
+let todoList = [];
 
-renderTodoList();
+// Load to-do list from localStorage when the page loads
+document.addEventListener('DOMContentLoaded', (event) => {
+  loadTodoList();
+  renderTodoList();
+});
+
+function handleOnkeydown(event) {
+  if (event.key === 'Enter') {
+    addTodo();
+  }
+}
 
 function renderTodoList() {
   let todoListHtml = ``;
 
   for (let i = 0; i < todoList.length; i++) {
     const todoObject = todoList[i];
+    const doneClass = todoObject.done ? 'done-clicked' : '';
     const html = `
-        <div id = "js-input-text-${i}" >&bull; ${todoObject.name} 
+        <div id = "js-input-text-${i}" class = "${doneClass}" >&bull; ${todoObject.name} 
         </div>
-        <div id = "js-date-text-${i}">due: ${todoObject.dueDate} 
+        <div id = "js-date-text-${i}" class = "${doneClass}">due: ${todoObject.dueDate} 
         </div>
         <button onclick = "
           addClassToText(${i});
@@ -27,13 +38,28 @@ function renderTodoList() {
     todoListHtml += html;
   }
   document.querySelector(".js-todo-list").innerHTML = todoListHtml;
+  saveTodoList();
 }
 
 function addClassToText(index) {
-  const inputText = document.getElementById(`js-input-text-${index}`);
-  inputText.classList.add("done-clicked");
-  const dateText = document.getElementById(`js-date-text-${index}`);
-  dateText.classList.add("done-clicked");
+  todoList[index].done = !todoList[index].done;
+  renderTodoList();
+}
+
+// Save to-do list to localStorage
+function saveTodoList() {
+  const todoListJson = JSON.stringify(todoList);
+  localStorage.setItem('todoList', todoListJson);
+}
+
+// Load to-do list from localStorage
+function loadTodoList() {
+  const todoListJson = localStorage.getItem('todoList');
+  if (todoListJson) {
+    todoList = JSON.parse(todoListJson);
+  } else {
+    todoList = [];
+  }
 }
 
 function addTodo() {
@@ -48,6 +74,7 @@ function addTodo() {
     const todo = {
       name: name,
       dueDate: dueDate,
+      done: false
     };
     todoList.push(todo);
     console.log(todoList);

@@ -17,7 +17,8 @@
 
     <div class="todo-container">
       <div class="todo-input-grid">
-        <input class="js-name-input name-input" placeholder="Enter your todos">
+        <input class="js-name-input name-input" placeholder="Enter your todos" onkeydown="
+        handleOnkeydown(event);">
         <input class="js-due-date-input due-date-input" type="date">
         <button class="add-todo-button" onclick="
           addTodo();

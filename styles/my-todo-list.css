@@ -55,7 +55,7 @@ body {
   font-family: 'Quicksand', sans-serif;
   color: rgb(26, 25, 25);
   display: grid;
-  grid-template-columns: 3fr 1fr 45px 45px;
+  grid-template-columns: 3fr 1fr 45px 42px;
   column-gap: 10px;
   row-gap: 10px;
   align-items: center;
