@@ -8,16 +8,15 @@ function renderTodoList() {
   for (let i = 0; i < todoList.length; i++) {
     const todoObject = todoList[i];
     const html = `
-      <p>
-        &bull;  ${todoObject.name} (Due: ${todoObject.dueDate})
+        <div>&bull; ${todoObject.name} </div>
+        <div>(Due: ${todoObject.dueDate}) </div>
         <button id = "doneButton" onclick = "
           addClassToButton();
-        ">Done</button>
+        " class = "done-todo-button">Done</button>
         <button onclick = "
           todoList.splice(${i}, 1);
           renderTodoList();  
-        ">Delete</button>
-      </p>
+        " class = "delete-todo-button">Delete</button>
     `;
     todoListHtml += html;
   }

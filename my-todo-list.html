@@ -6,12 +6,15 @@
   </head>
   <body>
     <p>Todo list</p>
-    <input class="js-name-input" placeholder="Enter your todos">
-    <input class="js-due-date-input" type="date">
-    <button class="add-todo-button" onclick="
-      addTodo();
-    ">Add</button>
-    <div class="js-todo-list"></div>
+    <div class="todo-input-grid">
+      <input class="js-name-input name-input" placeholder="Enter your todos">
+      <input class="js-due-date-input due-date-input" type="date">
+      <button class="add-todo-button" onclick="
+        addTodo();
+      ">Add</button>
+    </div>
+
+    <div class="js-todo-list todo-grid"></div>
 
     <script src="scripts/my-todo-list.js"></script>
   </body>
