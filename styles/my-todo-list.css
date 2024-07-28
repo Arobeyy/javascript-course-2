@@ -101,7 +101,7 @@ body {
 .todo-input-grid{
   margin-top: 45px;
   display: grid;
-  grid-template-columns: 300px 32px 45px;
+  grid-template-columns: 300px 32px 42px;
   column-gap: 10px;
   row-gap: 10px;
   align-items: center;
@@ -113,7 +113,7 @@ body {
   font-family: 'Quicksand', sans-serif;
   color: rgb(26, 25, 25);
   display: grid;
-  grid-template-columns: 3fr 1fr 45px 42px;
+  grid-template-columns: 3fr 1fr 42px 39px;
   column-gap: 10px;
   row-gap: 10px;
   align-items: center;
