@@ -10,13 +10,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 function dropDownTitleBox() {
   const html = `
-    <input class="js-title-input title-input-box" placeholder=" add title" />
+    <input class="js-title-input title-input-box" placeholder=" Enter title" />
     <button class="js-save-title-button title-save-button" onclick="
-      addTitle();
+      addTitle('.js-title-input');
       renderTodoInput();
-      saveTitle ();
-      saveTodoList ();
-      removeAddInputBox (); 
+      removeInputBox ('.js-add-title-container'); 
     ">
       <img class = "save-img" src = "icons/check_circle.png">
     </button>
@@ -24,20 +22,20 @@ function dropDownTitleBox() {
   document.querySelector(".js-add-title-container").innerHTML = html;
 }
 
-function removeAddInputBox() {
-  document.querySelector(".js-add-title-container").innerHTML = ``;
+function removeInputBox(box) {
+  document.querySelector(`${box}`).innerHTML = ``;
 }
 
-function addTitle() {
-  const inputElement = document.querySelector(".js-title-input");
+function addTitle(from) {
+  const inputElement = document.querySelector(`${from}`);
   const title = inputElement.value;
 
   if (!title) {
-    alert("add title for your to-do list.");
+    alert("Add title, title makes your to-do list organizable.");
   }
 
-  renderTodoTitle(title);
   todoListTitle = title;
+  renderTodoTitle(title);
   saveTitle();
 }
 
@@ -58,13 +56,13 @@ function renderTodoTitle(title) {
 
 function editTitleBox() {
   const html = `
-    <input class="js-edit-title-input" placeholder="add title" />
-    <button class="js-save-edited-title" onclick="
-      editTitle();
+    <input class="js-edit-title-input edit-title-input" placeholder="Enter title" />
+    <button class="js-save-edited-title edit-save-button" onclick="
+      addTitle('.js-edit-title-input');
       saveTitle ();
-      removeEditInputBox();
+      removeInputBox('.js-edit-title-container');
     ">
-      save
+      <img class = "edit-save-img" src = "icons/check_circle_brown.png">
     </button>
   `;
   document.querySelector(".js-edit-title-container").innerHTML = html;
