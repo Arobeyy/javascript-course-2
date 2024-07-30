@@ -68,19 +68,6 @@ function editTitleBox() {
   document.querySelector(".js-edit-title-container").innerHTML = html;
 }
 
-function removeEditInputBox() {
-  document.querySelector(".js-edit-title-container").innerHTML = ``;
-}
-
-function editTitle() {
-  const inputElement = document.querySelector(".js-edit-title-input");
-  const title = inputElement.value;
-
-  renderTodoTitle(title);
-  todoListTitle = title;
-  saveTitle();
-}
-
 function saveTitle() {
   const todoListTitleJson = JSON.stringify(todoListTitle);
   localStorage.setItem("todoListTitle", todoListTitleJson);
@@ -122,10 +109,9 @@ function handleOnkeydown(event) {
 function renderTodoList() {
   let todoListHtml = ``;
 
-  if (todoListTitle) {
-    renderTodoTitle(todoListTitle);
-    renderTodoInput();
-  }
+  
+  renderTodoTitle(todoListTitle);
+  renderTodoInput();
 
   for (let i = 0; i < todoList.length; i++) {
     const todoObject = todoList[i];
