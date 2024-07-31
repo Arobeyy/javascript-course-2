@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>search for a string in a array</title>
+  </head>
+  <body>
+    <script>
+      const arr = ['hello', 'world', 'search', 'found', 'search', 'good', 'morning'];
+
+      function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++) {
+          if (word === array[i]) {
+            return i;
+          }
+        }
+        return -1;
+      }
+
+      console.log(findIndex(arr, 'morning'));
+    </script>
+  </body>
+</html>
