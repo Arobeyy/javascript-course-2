@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>remove a string from an array</title>
+  </head>
+  <body>
+    <script>
+     /*
+     const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+
+      function removeItem(foods, item) {
+        const array = [];
+        for (let i = 0; i < foods.length; i++) {
+          if (foods[i] == item)
+            continue;
+          array.push(foods[i]);
+        }
+        return array;
+      }
+
+      console.log(removeItem(foods, 'egg'));
+      */
+
+      const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+
+      function removeItemFirstTwo(foods, item) {
+        const array = [];
+        let count = null;
+        for (let i = 0; i < foods.length; i++) {
+          if (foods[i] == item && count <= 2) {
+            count++;
+            continue;
+          }   
+          array.push(foods[i]);
+        }
+        return array;
+      }
+
+      console.log(removeItemFirstTwo(foods, 'egg'));
+      
+    </script>
+  </body>
+</html>
