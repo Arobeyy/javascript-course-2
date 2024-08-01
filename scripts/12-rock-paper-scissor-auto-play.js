@@ -26,10 +26,12 @@ function autoPlay() {
       const playerMove = pickComputerMove();
       playGame(playerMove);
     },1000);
+    document.querySelector('.auto-play-button').innerHTML = 'Stop playing';
     isAutoPlaying = true;
   } else {
     clearInterval(intervalId);
     isAutoPlaying = false;
+    document.querySelector('.auto-play-button').innerHTML = 'Auto play';
   }
 }
 
