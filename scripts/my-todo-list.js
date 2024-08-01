@@ -108,33 +108,31 @@ function handleOnkeydown(event) {
 
 function renderTodoList() {
   let todoListHtml = ``;
-
-  
   renderTodoTitle(todoListTitle);
   renderTodoInput();
 
-  for (let i = 0; i < todoList.length; i++) {
-    const todoObject = todoList[i];
+  todoList.forEach(function (todoObject, index) {
     const doneClass = todoObject.done ? "done-clicked" : "";
     const html = `
-        <div id = "js-input-text-${i}" class = "${doneClass}" >&bull; ${todoObject.name} 
+        <div id = "js-input-text-${index}" class = "${doneClass}" >&bull; ${todoObject.name} 
         </div>
-        <div id = "js-date-text-${i}" class = "${doneClass}">due: ${todoObject.dueDate} 
+        <div id = "js-date-text-${index}" class = "${doneClass}">due: ${todoObject.dueDate} 
         </div>
         <button onclick = "
-          addClassToText(${i});
+          addClassToText(${index});
           " class = "done-todo-button">
           <img class = "done-icon" src="icons/check-green.png">
         </button>
         <button onclick = "
-          todoList.splice(${i}, 1);
+          todoList.splice(${index}, 1);
           renderTodoList();  
         " class = "delete-todo-button">
           <img class = "delete-icon" src="icons/delete-brown.png">
         </button>
     `;
     todoListHtml += html;
-  }
+  });
+  
   document.querySelector(".js-todo-list").innerHTML = todoListHtml;
   saveTodoList();
 }
