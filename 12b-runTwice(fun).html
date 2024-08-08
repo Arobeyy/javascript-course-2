@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      const add = function () {
+        for (let i = 0; i < 2; i++) {
+          console.log(2+3);
+        }
+      }
+
+      function runTwice(fun) {
+        for (let i = 0; i < 2; i++) {
+          fun();
+        }
+      }
+
+      runTwice(add);
+
+      runTwice(function() {
+        console.log('12b');
+      });
+    </script>
+  </body>
+</html>
