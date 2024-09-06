@@ -111,7 +111,7 @@ function renderTodoList() {
   renderTodoTitle(todoListTitle);
   renderTodoInput();
 
-  todoList.forEach(function (todoObject, index) {
+  todoList.forEach((todoObject, index) => {
     const doneClass = todoObject.done ? "done-clicked" : "";
     const html = `
         <div id = "js-input-text-${index}" class = "${doneClass}" >&bull; ${todoObject.name} 

@@ -4,7 +4,20 @@
     <title>advanced functions</title>
   </head>
   <body>
+    <button onclick="" class="js-button">Click</button>
     <script>
+      const buttonElement = document.querySelector('.js-button');
+
+      const eventListener = () => {
+        console.log('click');
+      buttonElement.addEventListener('click',eventListener);
+
+      buttonElement.removeEventListener('click', eventListener);
+
+      buttonElement.addEventListener('click', () => {
+        console.log('click2');
+      });
+
       /*
       function greeting() {
         console.log('hello');
@@ -56,6 +69,9 @@
       console.log('next line2');
       */
 
+      /*
+      --------------- arrow function ----------------
+
       ["make dinner",
        "wash dishes", 
        "watch youtube"].forEach((value, index) => {
@@ -85,6 +101,16 @@
       const oneLine = () => 2 + 3;
       console.lgo(oneLine());
 
+      const object2 = {
+        method: () => {
+
+        },
+        method() {
+
+        }
+      };
+      */
+      
     </script>
   </body>
 </html>
