@@ -92,12 +92,17 @@ function renderTodoInput() {
         onkeydown="handleOnkeydown(event);"
       />
       <input class="js-due-date-input due-date-input" type="date" />
-      <button class="add-todo-button" onclick="addTodo();">
+      <button class="add-todo-button js-add-todo-button">
         <img class="add-icon" src="icons/add-light-brown.png" />
       </button>
     </div>
   `;
   document.querySelector(".js-created-todo").innerHTML = html;
+
+  document.querySelector('.js-add-todo-button')
+    .addEventListener('click', () => {
+      addTodo();
+    });
 }
 
 function handleOnkeydown(event) {
@@ -123,10 +128,7 @@ function renderTodoList() {
           " class = "done-todo-button">
           <img class = "done-icon" src="icons/check-green.png">
         </button>
-        <button onclick = "
-          todoList.splice(${index}, 1);
-          renderTodoList();  
-        " class = "delete-todo-button">
+        <button class = "delete-todo-button js-delete-todo-button">
           <img class = "delete-icon" src="icons/delete-brown.png">
         </button>
     `;
@@ -135,6 +137,14 @@ function renderTodoList() {
   
   document.querySelector(".js-todo-list").innerHTML = todoListHtml;
   saveTodoList();
+
+  document.querySelectorAll('.js-delete-todo-button')
+    .forEach( (deleteButton , index) => {
+      deleteButton.addEventListener('click', () => {
+        todoList.splice(index, 1);
+        renderTodoList();  
+      });
+    });
 }
 
 function addClassToText(index) {
