@@ -8,8 +8,11 @@
     <script>
       const buttonElement = document.querySelector('.js-button');
 
-      const eventListener = () => {
+      const eventListener = () => 
+      {
         console.log('click');
+      }
+        
       buttonElement.addEventListener('click',eventListener);
 
       buttonElement.removeEventListener('click', eventListener);
