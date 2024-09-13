@@ -1,0 +1,159 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  color: white; /* temporary */
+}
+
+body
+{
+  background-color: black;
+}
+
+.game-name
+{
+  font-size: 45px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: caveat;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.boldline-after-heading
+{
+  background-color: rgb(250, 185, 7);
+  border: 0;
+  height: 1px;
+  margin-bottom: 50px;
+}
+
+.rock-paper-scissors
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.player-move-button
+{
+  border-radius: 50%;
+  overflow: hidden;
+  border: solid;
+  border-width: 2px;
+  border-color: rgb(231, 177, 29);
+}
+
+.button-image
+{
+  width: 110px;
+  height: 110px;
+  /*
+  border-radius: 50%;
+  */
+  object-fit: cover;
+}
+
+.rock-button, .paper-button, .scissor-button
+{
+  border: none;
+  border-color: transparent;
+  transition: transform 0.3s ease-in-out;
+}
+
+.rock-button:hover, .paper-button:hover, .scissor-button:hover
+{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.button-container
+{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.reset-button,
+.auto-play-button
+{
+  color: white;
+  border: solid;
+  font-size: 15px;
+  font-family: monospace;
+  border-radius: 10px;
+  padding: 10px 30px;
+  background-color: black;
+  border-color: rgb(250, 185, 7);
+  border-width: 1px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.reset-button:hover,
+.auto-play-button:hover
+{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.js-score{
+  color: white;
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.score {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+}
+
+.result, .js-moves {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.result {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.js-moves, .js-result {
+  font-size: 15px;
+  font-family: monospace;
+  display: inline-block;
+}
+
+.move-icon {
+  width: 60px;
+  height: 60px;
+  /*
+  border-radius: 50%;
+  */
+  object-fit: cover;
+  border-radius: 50px;
+  border: solid;
+  border-color: black;
+}
+
+.moves {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 35px;
+}

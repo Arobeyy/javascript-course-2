@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles/12r.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gloria+Hallelujah&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <p class="game-name">Rock Paper Scissors</p>
+
+    <hr class="boldline-after-heading" />
+
+    <div class="rock-paper-scissors">
+      <div class="player-move-button">
+        <button class="rock-button js-rock-button">
+          <img class="button-image" src="photos/rock.jpg" />
+        </button>
+      </div>
+
+      <div class="player-move-button">
+        <button class="paper-button js-paper-button">
+          <img class="button-image" src="photos/paper.jpg" />
+        </button>
+      </div>
+
+      <div class="player-move-button">
+        <button class="scissor-button js-scissor-button">
+          <img class="button-image" src="photos/scissor.jpg" />
+        </button>
+      </div>
+    </div>
+
+    <div class="result">
+      <p class="js-result"></p>
+    </div>
+
+    <div class="moves">
+      <p class="js-moves"></p>
+    </div>
+
+    <div class="score">
+      <p class="js-score"></p>
+    </div>
+
+    <div class="button-container">
+      <button
+        class="reset-button"
+        onclick="
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score');
+        updateScoreElement();
+        removeMovesAndResult();
+      "
+      >
+        Reset
+      </button>
+      <button class="auto-play-button js-auto-play-button">Auto Play</button>
+    </div>
+    <div></div>
+
+    <script src="scripts/12r.js"></script>
+  </body>
+</html>
