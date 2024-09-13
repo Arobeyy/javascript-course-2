@@ -28,12 +28,21 @@ function autoPlay() {
     }, 1000);
     isAutoPlaying = true;
     document.querySelector(".auto-play-button").innerHTML = "Stop playing"; 
-    
+
   } else {
     clearInterval(intervalId);
     isAutoPlaying = false;
     document.querySelector(".auto-play-button").innerHTML = "Auto play";
   }
+}
+
+function resetScore() {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  localStorage.removeItem('score');
+  updateScoreElement();
+  removeMovesAndResult();
 }
 
 document.querySelector(".js-rock-button").addEventListener("click", () => {
@@ -48,6 +57,10 @@ document.querySelector(".js-scissor-button").addEventListener("click", () => {
   playGame("scissor");
 });
 
+document.querySelector(".js-reset-button").addEventListener("click", () => {
+  resetScore();
+});
+
 document.querySelector(".js-auto-play-button").addEventListener("click", () => {
   autoPlay();
 });
@@ -59,6 +72,10 @@ document.body.addEventListener("keydown", (event) => {
     playGame("paper");
   } else if (event.key === "s") {
     playGame("scissor");
+  } else if (event.key === 'a') {
+    autoPlay();
+  } else if (event.key === 'Backspace') {
+    resetScore();
   }
 });
 
