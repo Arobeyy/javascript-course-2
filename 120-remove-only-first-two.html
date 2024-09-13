@@ -6,7 +6,16 @@
       const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
 
       function removeEgg(array) {
-        return array.filter((array) => array !== 'egg');
+        let count = null;
+        return array.filter((array) => { 
+          if(array === 'egg' && count < 2) {
+            count ++;
+            return false
+          }
+
+          return true;
+        });
+        
       }
 
       console.log(removeEgg(foods));
