@@ -50,19 +50,7 @@
     </div>
 
     <div class="button-container">
-      <button
-        class="reset-button"
-        onclick="
-        score.wins = 0;
-        score.losses = 0;
-        score.ties = 0;
-        localStorage.removeItem('score');
-        updateScoreElement();
-        removeMovesAndResult();
-      "
-      >
-        Reset
-      </button>
+      <button class="reset-button js-reset-button">Reset</button>
       <button class="auto-play-button js-auto-play-button">Auto Play</button>
     </div>
     <div></div>
