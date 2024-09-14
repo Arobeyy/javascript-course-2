@@ -50,14 +50,19 @@
     </div>
 
     <div class="button-container">
-      <button class="reset-button js-reset-button">Reset</button>
+      <button id="openModal" class="reset-button js-reset-button">Reset</button>
       <button class="auto-play-button js-auto-play-button">Auto Play</button>
     </div>
 
-    <div id = "reset-modal" class="modal">
-      
+    <div id = "reset-button-modal" class="modal">
+      <div class="modal-content">
+        <h2 style="margin-bottom: 10px;" >Warning</h2>
+        <p>Are you sure you want to reset the score?</p>
+        <!-- Yes and No Button -->
+        <button id="yes-button" class="modal-button">Yes</button>
+        <button id="no-button" class="modal-button">No</button>
+      </div>
     </div>
-    <div></div>
 
     <script src="scripts/12r.js"></script>
   </body>

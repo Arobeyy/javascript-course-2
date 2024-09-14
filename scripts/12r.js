@@ -45,6 +45,42 @@ function resetScore() {
   removeMovesAndResult();
 }
 
+// Get the modal element
+const modal = document.getElementById("reset-button-modal");
+
+// Get the button that opens the modal
+const openModalBtn = document.getElementById("openModal");
+
+// Get the button that reset the score
+const yesBtn = document.getElementById("yes-button");
+
+// Get the button that closes the modal
+const noBtn = document.getElementById("no-button");
+
+// Event listener to open modal when the "Reset" button is clicked
+openModalBtn.addEventListener("click", function() {
+  modal.style.display = "flex"; // Display the modal as a flexbox (to center it)
+});
+
+// Event listener to close modal when the "Yes" button is clicked
+yesBtn.addEventListener("click", function() {
+  resetScore();  // Resets the score
+  modal.style.display = "none"; // Hide the modal
+});
+
+// Event listener to close modal when the "No" button is clicked
+noBtn.addEventListener("click", function() {
+  modal.style.display = "none"; // Hide the modal
+});
+
+// Optional: Close the modal if the user clicks anywhere outside the modal content
+window.addEventListener("click", function(event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+
 document.querySelector(".js-rock-button").addEventListener("click", () => {
   playGame("rock");
 });
@@ -55,10 +91,6 @@ document.querySelector(".js-paper-button").addEventListener("click", () => {
 
 document.querySelector(".js-scissor-button").addEventListener("click", () => {
   playGame("scissor");
-});
-
-document.querySelector(".js-reset-button").addEventListener("click", () => {
-  resetScore();
 });
 
 document.querySelector(".js-auto-play-button").addEventListener("click", () => {
